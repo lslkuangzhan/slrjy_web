@@ -7,12 +7,25 @@
 
 import axios from 'axios'
 export default {
-    data () {
-     return {
-       message:"asddasdasd"
-     }
-
-   },
+    data(){
+        return {
+            showLogin:true,
+            message: 'hello vue',
+            user:'',
+            homeContent: false,
+        }
+    },
+     mounted:function(){
+        this.created();
+    },
+    methods:{
+         created () {
+        axios.get('api/login/show').then((response) => {
+        this.message= response.data;
+        console.log(response);
+      })
+       }
+    }
   // created () {
 
   //   // this.$api.get('login/show').then(res => console.log(res));
@@ -22,9 +35,7 @@ export default {
 
   // }
 
-   abc () {
-      message:"123456789"
-    }
+   
 };
     
 </script>
