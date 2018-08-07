@@ -1,5 +1,5 @@
 // 配置API接口地址
-var root = 'http://localhost:8080'
+var root = '/api'
 // 引用axios
 var axios = require('axios')
 // 自定义判断元素类型JS
